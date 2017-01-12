@@ -30,7 +30,7 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 
 bot.dialog('/', function (session) {
-    if(session.message.text != undefined && session.message.text.trim().toUpperCase() == 'HI'){
+    if(session.message.text != undefined && session.message.text.trim().toUpperCase() == 'CHAT'){
         session.beginDialog('human_agent:/start');
         return;
     }

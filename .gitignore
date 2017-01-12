@@ -38,3 +38,6 @@ jspm_packages
 
 # Sqlite3
 *.sqlite3
+
+# Visual Studio Code
+.vscode

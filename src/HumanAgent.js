@@ -18,8 +18,8 @@ module.exports = function(opts){
             orientation: 1,
             msg_id: uuid.v1()
         });
-        if(session.message.text != undefined && session.message.text.trim().toUpperCase() == 'Q'){
-            session.send('Stop Human Agent.');
+        if(session.message.text != undefined && session.message.text.trim().toUpperCase() == 'BYE'){
+            session.send('Bye bye.');
             HttpProxy.commit({
                 type: 'stop_agent',
                 who: session.message.address.user.id,
@@ -44,7 +44,7 @@ module.exports = function(opts){
     });
 
     lib.dialog('/start', function(session, args){
-        session.send('Start Human Agent (Enter Q to exit):');
+        session.send('Let\'s chat now (Enter bye to exit):');
         session.replaceDialog('/', {
             referer: '/start'
         });
